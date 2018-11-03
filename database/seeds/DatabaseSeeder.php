@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        $this->Call (CarsTableSeeder::class);
         $this->Call (UsersTableSeeder::class);
     }
 }
