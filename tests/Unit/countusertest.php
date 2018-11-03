@@ -4,7 +4,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
-class UserCountTest extends TestCase
+class countusertest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,7 +15,7 @@ class UserCountTest extends TestCase
     {
         //$this->assertTrue(true);
         $user = User::all();
-        $count = $user->count();
-        $this->assertEquals(50, $count);
+        $count= $user->count();
+        $this->assertEquals(50,$count);
     }
 }
