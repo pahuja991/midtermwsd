@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -13,9 +10,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
-
     /**
      * Show the application dashboard.
      *
@@ -24,5 +20,22 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
+    function store(Request $request)
+    {
+        $name =$request->name;
+        return redirect()->route('thanks',['name' => $name]);
+    }
+    function thanks($name)
+    {
+        return view('thanks')->with(compact('name'));
     }
 }
